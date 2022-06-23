@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style>
+			body {
+				counter-reset: game; /* Propiedad que acepta un atributo que representa nombre del elemento a reiniciar su conteo */
+			}
+
+			/* Esta psuedo clase se activa cuando el elemento este chequedo */
+			input:checked {
+				counter-increment: game;
+			}
+
+			.total-score::after {
+				content: counter(game);
+			}
+		</style>
+		<title>Animationland</title>
+	</head>
+	<body>
+		<ul>
+			<li><input type="checkbox" id=""><span class="shield"></span></input></li>
+			<li><input type="checkbox" id=""><span class="shield"></span></input></li>
+			<li><input type="checkbox" id=""><span class="shield"></span></input></li>
+			<li><input type="checkbox" id=""><span class="shield"></span></input></li>
+			<li><input type="checkbox" id=""><span class="shield"></span></input></li>
+			<li><input type="checkbox" id=""><span class="shield"></span></input></li>
+			<li><input type="checkbox" id=""><span class="shield"></span></input></li>
+			<li><input type="checkbox" id=""><span class="shield"></span></input></li>
+		</ul>
+		<h3 class="total-score">Score: </h3>
+	</body>
+</html>
