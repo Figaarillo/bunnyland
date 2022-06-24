@@ -6,31 +6,202 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<style>
 			body {
-				counter-reset: game; /* Propiedad que acepta un atributo que representa nombre del elemento a reiniciar su conteo */
+				/* Propiedad que crea o reinicia un contador. Si no existe un contador este lo crea con el nombre que se le haya pasado como propiedad*/
+				/* counter-reset: game; */
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-family: sans-serif;
 			}
 
-			/* Esta psuedo clase se activa cuando el elemento este chequedo */
+			/*
+			/* Psuedo clase se activa cuando el elemento este chequedo
 			input:checked {
+				/* Propiedad que incrementa un valor del contador indicando el nombre del mismo.
 				counter-increment: game;
 			}
-
+			*/
+			/*
 			.total-score::after {
+				/* Función que agrega el valor de un contador a un elemento.
 				content: counter(game);
+			}
+			 */
+
+			.phone {
+				position: relative;
+				border-radius: 30px;
+				border: 8px solid #000;
+				background-color: hsl(199, 100%, 90%);
+				height: 630px;
+				width: 300px;
+				box-shadow: 0px 0px 30px -1px #000;
+				display: flex;
+				justify-content: center;
+				overflow: hidden;
+			}
+
+			.layers-1,
+			.layers-2,
+			.layers-4,
+			.layers-6 {
+				position: absolute;
+				width: 70px;
+				height: 70px;
+				background: hsl(60, 100%, 80%);
+				border-radius: 50%;
+				top: 200px;
+				right: 60px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				box-shadow: 0px 0px 20px -1px #000;
+			}
+
+			.layers-1::before,
+			.layers-2::before,
+			.layers-4::before,
+			.layers-6::before {
+				content: '; )';
+				transform: rotate(90deg);
+				font-size: 30px;
+				font-weight: 700;
+			}
+
+			.layers-2 {
+				left: 60px;
+			}
+
+			.layers-4 {
+				left: 35px;
+				top: 300px;
+			}
+
+			.layers-6 {
+				right: 20px;
+				top: 400px;
+			}
+
+			.layers-3,
+			.layers-5,
+			.layers-7 {
+				width: 200px;
+				height: 370px;
+				background-color: hsl(16, 43%, 52%);
+				position: absolute;
+				bottom: 0;
+				border-radius: 7px 7px 0 0;
+				overflow: hidden;
+				box-shadow: 0px 0px 20px -1px #000;
+			}
+
+			.layers-3::before,
+			.layers-5::before,
+			.layers-7::before {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 10px;
+				background-color: hsl(123, 24%, 51%);
+				box-shadow: 0 2px 6px 0px #222;
+			}
+
+			.layers-5 {
+				left: 0;
+				width: 150px;
+				height: 270px;
+			}
+
+			.layers-7 {
+				right: 0;
+				width: 110px;
+				height: 170px;
+			}
+
+			.layers-8,
+			.layers-8::before,
+			.layers-8::after {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				background-color: hsl(121, 83%, 31%);
+				bottom: -10px;
+			}
+
+			.layers-8 {
+				box-shadow: 0px 0px 20px 0px #000;
+			}
+
+			.layers-8::before {
+				content: '';
+				left: 60px;
+				bottom: -35px;
+				box-shadow: 15px -10px 20px -7px #000;
+			}
+
+			.layers-8::after {
+				content: '';
+				right: 60px;
+				bottom: -35px;
+				box-shadow: -15px -10px 20px -7px #000;
+			}
+
+			.layers-9,
+			.layers-9::before {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				background-color: #fff;
+				bottom: 30px;
+				left: -50px;
+				box-shadow: 0px 0px 20px 0px #000;
+			}
+
+			.layers-9::before {
+				content: '';
+				top: 70px;
+				left: 20px;
+				width: 120px;
+				box-shadow: 12px 0px 20px -5px #000;
+			}
+
+			.layers-10,
+			.layers-10::before {
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				background-color: #fff;
+				bottom: 30px;
+				right: -50px;
+				box-shadow: 0px 0px 20px 0px #000;
+			}
+
+			.layers-10::before {
+				content: '';
+				top: 70px;
+				right: 20px;
+				width: 120px;
+				box-shadow: -12px 0px 20px -5px #000;
 			}
 		</style>
 		<title>Animationland</title>
 	</head>
 	<body>
-		<ul>
-			<li><input type="checkbox" id=""><span class="shield"></span></input></li>
-			<li><input type="checkbox" id=""><span class="shield"></span></input></li>
-			<li><input type="checkbox" id=""><span class="shield"></span></input></li>
-			<li><input type="checkbox" id=""><span class="shield"></span></input></li>
-			<li><input type="checkbox" id=""><span class="shield"></span></input></li>
-			<li><input type="checkbox" id=""><span class="shield"></span></input></li>
-			<li><input type="checkbox" id=""><span class="shield"></span></input></li>
-			<li><input type="checkbox" id=""><span class="shield"></span></input></li>
-		</ul>
-		<h3 class="total-score">Score: </h3>
+		<div class="phone">
+			<div class="layers-1"></div>
+			<div class="layers-2"></div>
+			<div class="layers-3"></div>
+			<div class="layers-4"></div>
+			<div class="layers-5"></div>
+			<div class="layers-6"></div>
+			<div class="layers-7"></div>
+			<div class="layers-8"></div>
+			<div class="layers-9"></div>
+			<div class="layers-10"></div>
+		</div>
 	</body>
 </html>
