@@ -49,24 +49,82 @@
 				position: absolute;
 				width: 70px;
 				height: 70px;
-				background: hsl(60, 100%, 80%);
-				border-radius: 50%;
+				background: hsl(60, 100%, 100%);
+				border-radius: 45%;
 				top: 200px;
 				right: 60px;
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				box-shadow: 0px 0px 20px -1px #000;
+				box-shadow: 0px 0px 20px 0px #000;
 			}
 
 			.layers-1::before,
+			.layers-1::after,
 			.layers-2::before,
+			.layers-2::after,
 			.layers-4::before,
-			.layers-6::before {
-				content: '; )';
-				transform: rotate(90deg);
-				font-size: 30px;
-				font-weight: 700;
+			.layers-4::after,
+			.layers-6::before,
+			.layers-6::after {
+				content: '';
+				position: absolute;
+				background-color: #000;
+				width: 7px;
+				height: 7px;
+				border-radius: 50%;
+				right: 20px;
+			}
+
+			.layers-1::after,
+			.layers-2::after,
+			.layers-4::after,
+			.layers-6::after {
+				left: 20px;
+			}
+
+			.layers-1 .left-ear,
+			.layers-1 .right-ear,
+			.layers-2 .left-ear,
+			.layers-2 .right-ear,
+			.layers-4 .left-ear,
+			.layers-4 .right-ear,
+			.layers-6 .left-ear,
+			.layers-6 .right-ear {
+				overflow: hidden;
+				position: absolute;
+				background-color: #fff;
+				width: 20px;
+				height: 40px;
+				top: -30px;
+				left: 5px;
+				border-radius: 90%;
+				box-shadow: 0px -10px 20px -3px #000;
+			}
+
+			.layers-1 .right-ear,
+			.layers-2 .right-ear,
+			.layers-4 .left-ear,
+			.layers-6 .right-ear {
+				left: 45px;
+			}
+
+			.layers-1 .left-ear::before,
+			.layers-1 .right-ear::before,
+			.layers-2 .left-ear::before,
+			.layers-2 .right-ear::before,
+			.layers-4 .left-ear::before,
+			.layers-4 .right-ear::before,
+			.layers-6 .left-ear::before,
+			.layers-6 .right-ear::before {
+				content: '';
+				position: absolute;
+				background-color: pink;
+				width: 10px;
+				height: 30px;
+				border-radius: 90%;
+				left: 5px;
+				top: 5px;
 			}
 
 			.layers-2 {
@@ -192,12 +250,24 @@
 	</head>
 	<body>
 		<div class="phone">
-			<div class="layers-1"></div>
-			<div class="layers-2"></div>
+			<div class="layers-1">
+				<div class="left-ear"></div>
+				<div class="right-ear"></div>
+			</div>
+			<div class="layers-2">
+				<div class="left-ear"></div>
+				<div class="right-ear"></div>
+			</div>
 			<div class="layers-3"></div>
-			<div class="layers-4"></div>
+			<div class="layers-4">
+				<div class="left-ear"></div>
+				<div class="right-ear"></div>
+			</div>
 			<div class="layers-5"></div>
-			<div class="layers-6"></div>
+			<div class="layers-6">
+				<div class="left-ear"></div>
+				<div class="right-ear"></div>
+			</div>
 			<div class="layers-7"></div>
 			<div class="layers-8"></div>
 			<div class="layers-9"></div>
