@@ -60,20 +60,38 @@
 			}
 
 			.layers-1::before,
-			.layers-1::after,
 			.layers-2::before,
-			.layers-2::after,
 			.layers-4::before,
-			.layers-4::after,
 			.layers-6::before,
+			.layers-1::after,
+			.layers-2::after,
+			.layers-4::after,
 			.layers-6::after {
 				content: '';
 				position: absolute;
-				background-color: #000;
-				width: 7px;
-				height: 7px;
+				background-color: #666;
+				width: 6px;
+				height: 6px;
 				border-radius: 50%;
 				right: 20px;
+				animation-name: blink;
+				animation-duration: 2s;
+				animation-iteration-count: infinite;
+				animation-delay: 3s;
+			}
+
+			@keyframes blink {
+				0% {
+					height: 6px;
+				}
+				10% {
+					transform: translate(0px, 3px);
+					height: 2px;
+				}
+				100% {
+					transform: translate(0px, 0px);
+					height: 6px;
+				}
 			}
 
 			.layers-1::after,
@@ -84,12 +102,12 @@
 			}
 
 			.layers-1 .left-ear,
-			.layers-1 .right-ear,
 			.layers-2 .left-ear,
-			.layers-2 .right-ear,
 			.layers-4 .left-ear,
-			.layers-4 .right-ear,
 			.layers-6 .left-ear,
+			.layers-1 .right-ear,
+			.layers-2 .right-ear,
+			.layers-4 .right-ear,
 			.layers-6 .right-ear {
 				overflow: hidden;
 				position: absolute;
@@ -104,18 +122,18 @@
 
 			.layers-1 .right-ear,
 			.layers-2 .right-ear,
-			.layers-4 .left-ear,
+			.layers-4 .right-ear,
 			.layers-6 .right-ear {
 				left: 45px;
 			}
 
 			.layers-1 .left-ear::before,
-			.layers-1 .right-ear::before,
 			.layers-2 .left-ear::before,
-			.layers-2 .right-ear::before,
 			.layers-4 .left-ear::before,
-			.layers-4 .right-ear::before,
 			.layers-6 .left-ear::before,
+			.layers-1 .right-ear::before,
+			.layers-2 .right-ear::before,
+			.layers-4 .right-ear::before,
 			.layers-6 .right-ear::before {
 				content: '';
 				position: absolute;
